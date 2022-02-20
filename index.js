@@ -1,5 +1,5 @@
 const readLineSync = require("readline-sync");
-const quiz_obj = [
+const questions = [
   {
   question:"What is the highest score of rohit sharma?",
   options:["285","264","250","208"],
@@ -27,22 +27,22 @@ const quiz_obj = [
   },
 ]
 let correct_answers = 0;
-function Play(quiz_obj){
-  console.log(quiz_obj.question);
-  for(let ind=0;ind<quiz_obj.options.length;ind++){
-    console.log((ind+1)+"."+quiz_obj.options[ind]);
+function Play(questions){
+  console.log(questions.question);
+  for(let ind=0;ind<questions.options.length;ind++){
+    console.log((ind+1)+"."+questions.options[ind]);
   }
   const selected_option = readLineSync.question("Enter your option:");
-  if(quiz_obj.answer === selected_option){
+  if(questions.answer === selected_option){
       console.log("Hurray!!! correct answer");
       correct_answers++;
   }
   else{
-    console.log("Wrong answer, correct answer is option "+quiz_obj.answer);
+    console.log("Wrong answer, correct answer is option "+questions.answer);
   }
   console.log();
 }
 console.log("                 Welcome to cricket Quiz       ");
 console.log();
-quiz_obj.forEach(Play);
-console.log("Final score:"+correct_answers+"/"+quiz_obj.length);
+questions.forEach(Play);
+console.log("Final score:"+correct_answers+"/"+questions.length);
