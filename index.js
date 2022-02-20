@@ -27,7 +27,7 @@ const quiz_obj = [
   },
 ]
 let correct_answers = 0;
-function starter_fun(quiz_obj){
+function Play(quiz_obj){
   console.log(quiz_obj.question);
   for(let ind=0;ind<quiz_obj.options.length;ind++){
     console.log((ind+1)+"."+quiz_obj.options[ind]);
@@ -44,5 +44,5 @@ function starter_fun(quiz_obj){
 }
 console.log("                 Welcome to cricket Quiz       ");
 console.log();
-quiz_obj.forEach(starter_fun);
+quiz_obj.forEach(Play);
 console.log("Final score:"+correct_answers+"/"+quiz_obj.length);
